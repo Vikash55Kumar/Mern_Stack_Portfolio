@@ -4,7 +4,6 @@ import Button from '@mui/material/Button';
 import "./Contact.css"
 import vikash from '../../assets/contact.jpg'
 import emailjs from '@emailjs/browser';
-import ReCAPTCHA from "react-google-recaptcha";
 
 
 export default function Contact() {
@@ -69,11 +68,7 @@ export default function Contact() {
                               label="Message" multiline rows={3}
                               placeholder='Your message'
                           />
-{/*                           <ReCAPTCHA className='recaptcha'
-                            sitekey="6LfI8sopAAAAABbz3OxixlMpp4R3qKtOA90w4tbb"
-                            onChange={onChange}                           
-                          /> */}
-                          <Button variant="contained" className="submit-btn" type="submit" value="Send">Submit</Button>
+                          <Button variant="contained" className="submit-btn" type="submit" value="Send" onChange={onChange}>Submit</Button>
                       </form>
                   </div>
               </div>
