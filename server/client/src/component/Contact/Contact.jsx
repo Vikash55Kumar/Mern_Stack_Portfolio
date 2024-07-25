@@ -70,7 +70,7 @@ export default function Contact() {
                               placeholder='Your message'
                           />
                           <ReCAPTCHA className='recaptcha'
-                            sitekey="6LfI8sopAAAAAIfF7KQsjAuxZwLrCkMLWGqFIua9"
+                            sitekey={import.meta.env.VITE_SITE_KEY}
                             onChange={onChange}                           
                           />
                           <Button variant="contained" className="submit-btn" type="submit" value="Send" disabled={!validate}>Submit</Button>
