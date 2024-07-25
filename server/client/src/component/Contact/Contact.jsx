@@ -69,11 +69,11 @@ export default function Contact() {
                               label="Message" multiline rows={3}
                               placeholder='Your message'
                           />
-                          <ReCAPTCHA className='recaptcha'
+{/*                           <ReCAPTCHA className='recaptcha'
                             sitekey="6LfI8sopAAAAABbz3OxixlMpp4R3qKtOA90w4tbb"
                             onChange={onChange}                           
-                          />
-                          <Button variant="contained" className="submit-btn" type="submit" value="Send" disabled={!validate}>Submit</Button>
+                          /> */}
+                          <Button variant="contained" className="submit-btn" type="submit" value="Send">Submit</Button>
                       </form>
                   </div>
               </div>
