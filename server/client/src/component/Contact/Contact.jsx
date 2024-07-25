@@ -18,7 +18,7 @@ export default function Contact() {
         e.preventDefault();
         emailjs
           .sendForm('service_shadr0o', 'template_mj7rlbd', form.current, {
-            publicKey: `${import.meta.env.VITE_PUBLIC_KEY}`,
+            publicKey: process.env.PUBLIC_KEY,
           })
           .then(
             (result) => {
@@ -70,7 +70,7 @@ export default function Contact() {
                               placeholder='Your message'
                           />
                           <ReCAPTCHA className='recaptcha'
-                            sitekey={import.meta.env.VITE_SITE_KEY}
+                            sitekey={process.env.SITE_KEY}
                             onChange={onChange}                           
                           />
                           <Button variant="contained" className="submit-btn" type="submit" value="Send" disabled={!validate}>Submit</Button>
