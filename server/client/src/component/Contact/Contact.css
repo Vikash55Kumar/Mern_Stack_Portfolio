@@ -68,17 +68,13 @@
     animation: contactFormInputs 1s ease-in-out forwards 0.5s;
 }
 
-.recaptcha {
-    margin-top: .3rem;
-    margin-bottom: 1rem;
-    transform: scale(1);
-    transform-origin: center center;
-    transform: translateY(-100vh);
-    animation: contactFormBtn 1s ease-in-out forwards 1s;
-    
+.space {
+  padding-top: 2.5rem;
 }
 .submit-btn {
     margin-left: 0;
+    margin-top: 2rem;
+    padding-top: 2rem;
     height: 3.2rem;
     max-width:  19rem;
     transform: translateX(-100vw);
