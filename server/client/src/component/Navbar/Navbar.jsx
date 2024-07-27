@@ -35,7 +35,6 @@ function Navbar() {
       profileIconColor="HSL(250, 100%, 75%)"
       profileIconColorHover="red"
     />
-  
 }
 
 export default Navbar

@@ -13,7 +13,6 @@ import Certificate from '../Achievement/Achievement';
 import Passionate from '../passionate/Passionate';
 import Achievement from '../Achievement/Achievement';
 
-
 const Home =({timelines, project, skills, intro, achievement, passionate}) => {
 
   return (

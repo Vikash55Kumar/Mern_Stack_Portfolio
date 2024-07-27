@@ -1,4 +1,3 @@
-// import React from "react";
 import React, { useState } from "react";
 import "./AdminPanel.css"
 import { Typography, Button } from "@mui/material";;
@@ -9,7 +8,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout, updateUser } from "../../action/user";
 import { useAlert } from "react-alert";
 import { useEffect } from "react";
-
 
 const  AdminPanel = () => {
 
@@ -75,7 +73,6 @@ const  AdminPanel = () => {
         }
       }
 
-
     const submitHandler = (e) => {
         e.preventDefault();
         dispatch(updateUser(name, email, password, skills, about, ));
@@ -98,8 +95,6 @@ const  AdminPanel = () => {
             dispatch({type:"CLEAR_MESSAGE"});
         }
     }, [alert, error, message, dispatch, loginMessage]);
-
-
 
     return <div className="adminpanel">
        <div className="adminContainer">
@@ -278,6 +273,5 @@ const  AdminPanel = () => {
         </div>
     </div>
 }
-
 
 export default AdminPanel;

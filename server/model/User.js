@@ -7,13 +7,11 @@ const userSchema = new mongoose.Schema({
         unique:true,
         required:[true, "Please enter email"],
     },
-
     password : {
         type: String,
         required:[true, "Please enter password"],
         select:false,
     },
-
     intro : {
         name : String,
         description : String,
@@ -23,9 +21,7 @@ const userSchema = new mongoose.Schema({
             public_id : String,
             url : String,
         }
-
     },
-
     timeline: [
         {
             title:String,
@@ -37,7 +33,6 @@ const userSchema = new mongoose.Schema({
             }
         }
     ],
-
     skills: {
         image1: {
             public_id : String,
@@ -64,7 +59,6 @@ const userSchema = new mongoose.Schema({
             url: String,
         },
     },
-
     projects: [
         {
           url: String,
@@ -77,8 +71,6 @@ const userSchema = new mongoose.Schema({
           techStack: String,
         },
       ],
-    
-
     about: {
         image1: {
             public_id:String,
@@ -95,7 +87,6 @@ const userSchema = new mongoose.Schema({
         title:String,
         description:String
     },
-
     achievements : [
         {
             url: String,
@@ -106,7 +97,6 @@ const userSchema = new mongoose.Schema({
             },
         }
     ],
-
     passionate : [
         {
             title: String,
@@ -117,16 +107,7 @@ const userSchema = new mongoose.Schema({
             },
         }
     ],
-    
-    contact: {
-        name:String,
-        email:String, 
-        message:String,
-    },
-    
-    
 });
-
 export const User = mongoose.model("User", userSchema);
 
 

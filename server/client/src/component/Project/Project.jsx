@@ -69,7 +69,6 @@ const Projects = ({ projects =[] }) => {
           />
         ))}
       </div>
-
       <Typography className="projects_btn" variant="h3" style={{ font: "100 1.2rem 'Ubuntu Mono'" }}>
         All The Projects Shown Above Are Made By Me <FaRegSmileWink />
       </Typography>

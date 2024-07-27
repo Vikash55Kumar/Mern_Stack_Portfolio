@@ -16,13 +16,10 @@ import { fileURLToPath } from "url";
 const __filename=fileURLToPath(import.meta.url)
 const __dirname=path.dirname(__filename)
 
-console.log(__dirname)
-
 app.use(express.static(path.join(__dirname, '/client/dist')))
 
 // render client for any path
 app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'client/dist/index.html')))
-
 
 // import cloudinary from "cloudinary"
 cloudinary.v2.config({

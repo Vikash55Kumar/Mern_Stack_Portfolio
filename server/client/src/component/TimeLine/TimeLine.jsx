@@ -15,7 +15,6 @@ const TimeLine=({timelines=[]}) => {
                 contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
             >
                 <h3 className="title">{item.title}</h3>
-                
                 <p>{item.description}</p>
             </VerticalTimelineElement>
         )};

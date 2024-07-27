@@ -17,9 +17,6 @@ import Achievement from './component/AdminPanel/Achievement.jsx';
 import Passionate from './component/passionate/Passionate.jsx';
 import Passionates from './component/AdminPanel/Passionate.jsx';
 
-
-
-
 function App() {
 
   const dispatch = useDispatch();
@@ -30,7 +27,6 @@ function App() {
     dispatch(getUser());
     dispatch(loadUser);
   }, [dispatch]);
-
 
   return (
     <Router>

@@ -5,7 +5,6 @@ import { login } from '../../action/user';
 import {useDispatch, useSelector} from "react-redux";
 import {useAlert} from "react-alert"
 
-
 function Login() {
     const [email, setEmail]=useState("");
     const [password, setPassword]=useState("");
@@ -45,9 +44,7 @@ function Login() {
                     <p>N</p>
                     <p>E</p>
                     <p>L</p>
-
                 </Typography>
-
 
                 <div>
                     <input

@@ -1,7 +1,5 @@
 import React from 'react'
 import './About.css'
-import { Typography } from '@mui/material'
-
 
 export default function About({about = {}}) {
   return (

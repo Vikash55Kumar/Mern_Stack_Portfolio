@@ -14,8 +14,7 @@ export default function Passionate({ passionate = [] }) {
       progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
     };
   return (
-    <>
-      <section id='skills'>
+    <section id='skills'>
         <span className="skillTitle">What I do</span>
         <span className="skillDescription">
           I am a dedicated B-tech student and passionate in Java Problem solving
@@ -58,30 +57,6 @@ export default function Passionate({ passionate = [] }) {
           <span ref={progressContent } className="hidden-svg"></span>
           </Swiper>
         </div>
-      </section>
-    </>
+    </section>
   );
 }
-
-
-     {/* <div className="skillBar">
-            <img src={web_developer} alt="" className="skillBarImage" />
-            <div className="skillBarText">
-            <h2>Web Development</h2>
-            <p>Upcoming Full Stack Developer</p>
-            </div>
-          </div>
-          <div className="skillBar">
-            <img src={app} alt="" className="skillBarImage" />
-            <div className="skillBarText">
-            <h2>DSA in Java</h2>
-            <p>Enhance problem solving skills</p>
-            </div>
-          </div>
-          <div className="skillBar">
-            <img src={ui} alt="" className="skillBarImage" />
-            <div className="skillBarText">
-            <h2>Reading Books</h2>
-            <p>Inspirational and motivational literature</p>
-            </div>
-          </div> */}

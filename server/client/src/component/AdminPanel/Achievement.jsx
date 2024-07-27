@@ -62,75 +62,72 @@ const Achievement=() => {
       }, [alert, error, message, dispatch, loginMessage]);
 
     return (
-        <>
-            <div className="adminContainer">
-                <Typography className="adminName" variant="h4">
-                    <p>A</p>
-                    <p>D</p>
-                    <p>M</p>
-                    <p>I</p>
-                    <p style={{marginRight:"1vmax"}}>N</p>
+        <div className="adminContainer">
+            <Typography className="adminName" variant="h4">
+                <p>A</p>
+                <p>D</p>
+                <p>M</p>
+                <p>I</p>
+                <p style={{marginRight:"1vmax"}}>N</p>
 
-                    <p>P</p>
-                    <p>A</p>
-                    <p>N</p>
-                    <p>E</p>
-                    <p>L</p>
-                </Typography>
-        
-                <form onSubmit={submitHandler}>
-                    <input 
-                        type="text"
-                        placeholder="Title"
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                        className="adminPanelInput"
-                    />    
-                    <input 
-                        type="text"
-                        placeholder="url"
-                        value={url}
-                        onChange={(e) => setUrl(e.target.value)}
-                        className="adminPanelInput"
-                    />    
-                    <input
-                        type="file"
-                        onChange={handleImage}
-                        className="adminFileUpload"
-                        accept="image/*"
-                    />  
-                    <Link to="/account">
-                        BACK <MdKeyboardBackspace/>
-                    </Link>
-                    <Button type='submit' variant='contained' disabled={loading}>
-                        Add
-                    </Button>
-                </form> 
-                <div className="timeline">
-                    {user && user.achievements && user.achievements.map((item)=> (
-                        <div className='youtubeCard' key={item._id}>
-                            <Typography varient="h6" style={{fontWeight:"600"}}>{item.title}</Typography>
-                            <Typography varient="body1" style={{letterSpacing:"2px"}}>
-                                {item.url}
-                            </Typography>
-                            <img src={item.image?.url} alt="image"/>
-                            
-                            <Button
-                                style={{
-                                    margin:"auto",
-                                    display:"block",
-                                    color:"red"
-                                }}
-                                onClick={()=> deleteHandler(item._id)}
-                                >
-                                <FaTrash/>
-                            </Button>
-                        </div>
-                    ))}
-                </div>
-
+                <p>P</p>
+                <p>A</p>
+                <p>N</p>
+                <p>E</p>
+                <p>L</p>
+            </Typography>
+    
+            <form onSubmit={submitHandler}>
+                <input 
+                    type="text"
+                    placeholder="Title"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    className="adminPanelInput"
+                />    
+                <input 
+                    type="text"
+                    placeholder="url"
+                    value={url}
+                    onChange={(e) => setUrl(e.target.value)}
+                    className="adminPanelInput"
+                />    
+                <input
+                    type="file"
+                    onChange={handleImage}
+                    className="adminFileUpload"
+                    accept="image/*"
+                />  
+                <Link to="/account">
+                    BACK <MdKeyboardBackspace/>
+                </Link>
+                <Button type='submit' variant='contained' disabled={loading}>
+                    Add
+                </Button>
+            </form> 
+            <div className="timeline">
+                {user && user.achievements && user.achievements.map((item)=> (
+                    <div className='youtubeCard' key={item._id}>
+                        <Typography varient="h6" style={{fontWeight:"600"}}>{item.title}</Typography>
+                        <Typography varient="body1" style={{letterSpacing:"2px"}}>
+                            {item.url}
+                        </Typography>
+                        <img src={item.image?.url} alt="image"/>
+                        
+                        <Button
+                            style={{
+                                margin:"auto",
+                                display:"block",
+                                color:"red"
+                            }}
+                            onClick={()=> deleteHandler(item._id)}
+                            >
+                            <FaTrash/>
+                        </Button>
+                    </div>
+                ))}
             </div>
-        </>
+        </div>
     )
 }
 

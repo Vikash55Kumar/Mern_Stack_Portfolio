@@ -6,7 +6,6 @@ import {
   login,
   logout,
   getUser,
-  contact,
   userUpdate,
   addTimeline,
   addProject,
@@ -41,6 +40,5 @@ userRouter.route("/admin/timeline/:id").delete(isAuthenticate, deleteTimeline);
 userRouter.route("/admin/achievement/:id").delete(isAuthenticate, deleteAchievements);
 userRouter.route("/admin/passionate/:id").delete(isAuthenticate, deletePassions);
 userRouter.route("/admin/project/:id").delete(isAuthenticate, deleteProjects);
-userRouter.route("/contact").post(contact);
 
 

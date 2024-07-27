@@ -20,7 +20,6 @@ const Intro =() => {
   const [description, setDescription] = useState("");
   const [subDescription, setSubDescription] = useState("");
 
-
 const submitHandler = async (e) => {
   e.preventDefault();
 
@@ -79,8 +78,7 @@ const submitHandler = async (e) => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             className="adminPanelInput"
-          />
-          
+          />       
           <input
             type="text"
             placeholder="Description"
@@ -88,7 +86,6 @@ const submitHandler = async (e) => {
             onChange={(e) => setDescription(e.target.value)}
             className="adminPanelInput"
           />
-
           <input
             type="text"
             placeholder="SubDescription"
@@ -96,7 +93,6 @@ const submitHandler = async (e) => {
             onChange={(e) => setSubDescription(e.target.value)}
             className="adminPanelInput"
           />
-
           <input
             type="text"
             placeholder="Link"
@@ -104,18 +100,15 @@ const submitHandler = async (e) => {
             onChange={(e) => setUrl(e.target.value)}
             className="adminPanelInput"
           />
-          
           <input
             type="file"
             onChange={handleIntroImage}
             className="adminFileUpload"
             accept="image/*"
           />
-
           <Link to="/account">
             BACK <MdKeyboardBackspace />
           </Link>
-
           <Button type="submit" variant="contained" disabled={loading}>
             UPDATE
           </Button>

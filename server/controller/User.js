@@ -1,7 +1,6 @@
 import {User} from "../model/User.js";
 import jwt from "jsonwebtoken";   //authentication and and information exchange in web development.
 import cloudinary from "cloudinary";
-import { sendMail } from "../middleware/sendMailer.js";
 
 export const login = async(req, res) => {
     try {
@@ -37,8 +36,6 @@ export const login = async(req, res) => {
     }
 }
 
-
-
 export const logout = async(req, res) => {
     try {
         res.status(200)
@@ -58,7 +55,6 @@ export const logout = async(req, res) => {
     }
 }
 
-
 export const getUser = async(req, res) => {
     
     try {
@@ -76,7 +72,6 @@ export const getUser = async(req, res) => {
     }
 }
 
-
 export const myProfile = async (req, res) => {
     try {
       const user = await User.findById(req.user._id);
@@ -92,7 +87,6 @@ export const myProfile = async (req, res) => {
       });
     }
   };
-
 
 export const intro = async (req, res) => {
     try {
@@ -121,7 +115,6 @@ export const intro = async (req, res) => {
                 url: introCloud.secure_url,
             };
         }
-
         await user.save();
 
         res.status(200).json({
@@ -137,27 +130,6 @@ export const intro = async (req, res) => {
     }
 };
 
-export const contact = async(req, res) => {
-    try {
-        const {name, email, message} =req.body;
-
-        const userMessage=`Hey, I am ${name}. My email is ${email}. My message is ${message}.`;
-        await sendMail(userMessage);
-
-        return res.status(200). json({
-            success:true,
-            message:"Message Sent Successfully",
-        });
-    }
-    catch(error) {
-        return res.status(400).json({
-            success:false,
-            message: error.message,
-        });
-    }
-}
-
-
 export const userUpdate = async(req, res) => {
     try {
         const user = await User.findById(req.user._id);
@@ -167,15 +139,12 @@ export const userUpdate = async(req, res) => {
         if(name){
             user.name=name;
         }
-
         if(email){
             user.email=email;
         }
-
         if(password){
             user.password=password;
         }
-
         if(skills){
             if(skills.image1) {
                 await cloudinary.v2.uploader.destroy(user.skills.image1.public_id);
@@ -188,68 +157,57 @@ export const userUpdate = async(req, res) => {
                     url:myCloud.secure_url,
                 };
             };
-
             if(skills.image2) {
                 await cloudinary.v2.uploader.destroy(user.skills.image2.public_id);
                 const myCloud = await cloudinary.v2.uploader.upload(skills.image2, {
                     folder:"portfolio",
                 });
-
                 user.skills.image2 ={
                     public_id:myCloud.public_id,
                     url:myCloud.secure_url,
                 };
             };
-
             if(skills.image3) {
                 await cloudinary.v2.uploader.destroy(user.skills.image3.public_id);
                 const myCloud = await cloudinary.v2.uploader.upload(skills.image3, {
                     folder:"portfolio",
                 });
-
                 user.skills.image3={
                     public_id:myCloud.public_id,
                     url:myCloud.secure_url,
                 };
             };
-
             if(skills.image4) {
                 await cloudinary.v2.uploader.destroy(user.skills.image4.public_id);
                 const myCloud = await cloudinary.v2.uploader.upload(skills.image4, {
                     folder:"portfolio",
                 });
-
                 user.skills.image4={
                     public_id:myCloud.public_id,
                     url:myCloud.secure_url,
                 };
             };
-
             if(skills.image5) {
                 await cloudinary.v2.uploader.destroy(user.skills.image5.public_id);
                 const myCloud = await cloudinary.v2.uploader.upload(skills.image5, {
                     folder:"portfolio",
                 });
-
                 user.skills.image5={
                     public_id:myCloud.public_id,
                     url:myCloud.secure_url,
                 };
             };
-
             if(skills.image6) {
                 await cloudinary.v2.uploader.destroy(user.skills.image6.public_id);
                 const myCloud = await cloudinary.v2.uploader.upload(skills.image6, {
                     folder:"portfolio",
                 });
-
                 user.skills.image6={
                     public_id:myCloud.public_id,
                     url:myCloud.secure_url,
                 };
             };
         };
-
         if(about) {
             if(about.title) {
                 user.about.title=about.title;
@@ -257,13 +215,11 @@ export const userUpdate = async(req, res) => {
             if(about.description) {
                 user.about.description=about.description;
             }
-            
             if(about.image1) {
                 await cloudinary.v2.uploader.destroy(user.about.image1.public_id);
                 const abtCloud=await cloudinary.v2.uploader.upload(about.image1, {
                     folder:"portfolio"
                 });
-
                 user.about.image1 = {
                     public_id:abtCloud.public_id,
                     url:abtCloud.secure_url,
@@ -274,7 +230,6 @@ export const userUpdate = async(req, res) => {
                 const abtCloud=await cloudinary.v2.uploader.upload(about.image2, {
                     folder:"portfolio"
                 });
-
                 user.about.image2 = {
                     public_id:abtCloud.public_id,
                     url:abtCloud.secure_url,
@@ -285,14 +240,12 @@ export const userUpdate = async(req, res) => {
                 const abtCloud=await cloudinary.v2.uploader.upload(about.image3, {
                     folder:"portfolio"
                 });
-
                 user.about.image3 = {
                     public_id:abtCloud.public_id,
                     url:abtCloud.secure_url,
                 }
             }
         }
-
         await user.save();
 
         res.status(200). json({
@@ -322,7 +275,6 @@ export const addTimeline = async(req, res) => {
                 message: "User not found",
             });
         }
-    
         const myCloud = await cloudinary.uploader.upload(image, {
           folder: "portfolio",
         });
@@ -352,7 +304,6 @@ export const addTimeline = async(req, res) => {
     }
 }
 
-
 export const addProject = async (req, res) => {
   try {
     const { url, title, description, techStack} = req.body;
@@ -367,7 +318,6 @@ export const addProject = async (req, res) => {
             message: "User not found",
         });
     }
-
 
     const myCloud = await cloudinary.uploader.upload(image, {
       folder: "portfolio",
@@ -399,7 +349,6 @@ export const addProject = async (req, res) => {
   }
 };
 
-  
   export const deleteTimeline = async(req, res) => {
     try {
         const {id} = req.params;
@@ -437,7 +386,6 @@ export const deleteProjects = async(req, res) => {
                 message: "Project not found",
             });
         }
-
         user.projects=user.projects.filter((item) => item._id != id);
         
         await cloudinary.v2.uploader.destroy(projectToDelete.image.public_id);
@@ -538,8 +486,6 @@ export const deleteAchievements = async(req, res) => {
     }
 }
 
-
-
 export const addPassions = async (req, res) => {
     try {
         const { title, description} = req.body;
@@ -620,17 +566,3 @@ export const deletePassions = async(req, res) => {
         });
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
