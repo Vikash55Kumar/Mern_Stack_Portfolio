@@ -24,8 +24,8 @@ export default function Passionate({ passionate = [] }) {
         I also specialize in creating user-friendly MERN portfolio websites. 
         Proficient in HTML, CSS, JavaScript, React.js, Node.js, Express, 
         and MongoDB, I bring both technical skills and hands-on design experience with Canva.
-         I’m a quick learner, adaptable, and a strong advocate for collaboration. 
-         In my free time, I enjoy mentoring, coding, and reading.
+        I’m a quick learner, adaptable, and a strong advocate for collaboration. 
+        In my free time, I enjoy mentoring, coding, and reading.
         </span>
         <div className="skillBars">
           <Swiper
