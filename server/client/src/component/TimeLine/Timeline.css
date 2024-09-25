@@ -1,0 +1,42 @@
+.vertical-timeline-element-content{
+    background-color: rgb(239, 232, 232);
+    box-shadow: 1px 14px 0px #b8acac;
+    padding: 1rem;
+}
+.vertical-timeline--two-columns .vertical-timeline-element-content {
+    padding: 1rem;
+}
+.title {
+
+    padding-top: 2rem;
+}
+ 
+.vertical-timeline-element-content p {
+    padding-bottom: 1rem;
+}
+
+.vertical .title {
+    font-size: 1.7rem; /* Decrease the font size of the title */
+}
+
+.vertical-timeline-element-date {
+    font-size: medium;
+    font-weight: 600;
+}
+
+@media only screen and (min-width: 768px) {
+    .vertical-timeline-element-content 
+    .vertical-timeline-element-date {
+    font-size: 1.3rem;
+    }
+}
+@media only screen and (min-width: 1170px) {
+    .vertical-timeline--two-columns 
+    .vertical-timeline-element-content 
+    .vertical-timeline-element-date {
+    left: 84%;
+    font-size: 1.3rem;
+    font-weight: bold;
+    }
+}
+

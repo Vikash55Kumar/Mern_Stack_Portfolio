@@ -1,0 +1,68 @@
+#app {
+    height: 100%;
+  }
+  
+  html,
+  .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+ 
+  }
+  
+  .title {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hidden-svg {
+    visibility: hidden;
+  }
+  
+  .swiper {
+    width: 100%;
+    height: 100%; /* Ensure the swiper takes full height */
+    padding: 50px 0;
+  }
+  
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+  }
+
+  /* Media query for mobile devices */
+@media (max-width: 768px) {
+  .swiper {
+    padding: 20px 0;
+  }
+
+  .swiper-slide {
+    width: 100%;
+    height: auto; 
+  }
+
+  .swiper-slide img {
+    width: 100%;
+    height: auto;
+  }
+}
+  

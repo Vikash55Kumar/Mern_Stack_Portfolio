@@ -1,0 +1,119 @@
+#about {
+    min-height: 80vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 79rem;
+    width: 100vw;
+    font-weight: 600;
+    font-size: 3rem;
+}
+
+.aboutImg {
+    width: 45vw;
+    max-width: 80%;
+}
+
+.port {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    margin-top: 0;
+    width: 55vw;
+    /* font-weight: 700;
+    font-size: 3rem; */
+}
+
+.desc {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 1rem;
+    max-width: 51rem;
+    margin-right: 2rem;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 3rem;
+    padding-top: 3rem;
+}
+
+.workImgs {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50vw;
+    max-width: 80;
+    padding: .2rem;
+}
+
+.workImg {
+    height: 20rem;
+    width: 20rem;
+    margin-right: 2rem;
+    margin-top: 1rem;
+}
+
+.workImg1 {
+    margin-top: 4rem;
+    object-fit: contain;
+    padding: 1rem;
+    height: 30rem;
+    width: 25rem;
+}
+
+@media screen and (max-width:1011px) {
+    .aboutImg {
+        display: none;
+    }
+    .port {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100vw;
+    }
+    .about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto;
+        width: 100vw;
+    }
+    .workImgs {
+        width: 80vw;
+        margin-bottom: 1rem;
+    }
+    .workImg {
+        object-fit: cover;
+        height: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+        padding: 1rem;
+    }
+    .title {
+        text-align: center;
+    }
+    .desc {
+        text-align: justify;
+        margin: 1rem;
+        padding: 0 1rem;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .workImgs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        object-fit: cover;
+    }
+}
