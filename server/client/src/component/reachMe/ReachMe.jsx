@@ -27,7 +27,7 @@ export default function ReachMe() {
                   <a className="link" >
                   <img src={twitter} alt="" className='image2' />
                   </a>
-                  <a className="link" href="https://github.com/Vikash55Kumar?tab=repositories">
+                  <a className="link" href="https://github.com/Vikash55Kumar">
                   <img src={github} alt="" className='image2' />
                   </a>
               </div>
