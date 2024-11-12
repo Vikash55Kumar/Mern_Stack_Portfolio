@@ -1,11 +1,11 @@
-import axios from 'axios';
+import api from "../api";
 export const getUser = () => async(dispatch) => {
     try {
         dispatch({
             type: "GET_USER_REQUEST",
         });
 
-        const {data} =await axios.get("/api/v1/user");
+        const {data} =await api.get("/user");
         dispatch({
             type: "GET_USER_SUCCESS",
             payload:data.user,
@@ -25,7 +25,7 @@ export const login = (email, password) => async(dispatch) => {
             type: "LOGIN_REQUEST",
         });
 
-        const {data} =await axios.post("api/v1/login", {
+        const {data} =await api.post("/login", {
             email,
             password,
         }, 
@@ -56,7 +56,7 @@ export const logout = () => async(dispatch) => {
             type: "LOGOUT_REQUEST",
         });
 
-        const {data} =await axios.get("/api/v1/logout");
+        const {data} =await api.get("/logout");
         dispatch({
             type: "LOGOUT_SUCCESS",
             payload:data.message,
@@ -76,7 +76,7 @@ export const loadUser = () => async (dispatch) => {
         type: "LOAD_USER_REQUEST",
       });
   
-      const { data } = await axios.get("/api/v1/me");
+      const { data } = await api.get("/me");
   
       dispatch({
         type: "LOAD_USER_SUCCESS",
@@ -96,7 +96,7 @@ export const loadUser = () => async (dispatch) => {
             type: "ADD_INTRO_REQUEST",
         });
 
-        const {data} =await axios.post("/api/v1/admin/intro", formData, {
+        const {data} =await api.post("/admin/intro", formData, {
             headers: {
                 "Content-Type" :"multipart/form-data"
             }
@@ -121,7 +121,7 @@ export const updateUser = (name, email, password, skills, about) => async(dispat
             type: "UPDATE_USER_REQUEST",
         });
 
-        const {data} =await axios.put("api/v1/admin/userUpdate", {
+        const {data} =await api.put("/admin/userUpdate", {
             name,
             email,
             password,
@@ -152,7 +152,7 @@ export const addTimeline = (formData) => async(dispatch) => {
             type: "ADD_TIMELINE_REQUEST",
         });
 
-        const {data} =await axios.post("/api/v1/admin/timeline/add", formData, {
+        const {data} =await api.post("/admin/timeline/add", formData, {
             headers: {
                 "Content-Type" :"multipart/form-data",
             }
@@ -176,7 +176,7 @@ export const deleteTimeline = (id) => async(dispatch) => {
             type: "DELETE_TIMELINE_REQUEST",
         });
 
-        const { data } = await axios.delete(`/api/v1/admin/timeline/${id}`);
+        const { data } = await api.delete(`/admin/timeline/${id}`);
         
         dispatch({
             type: "DELETE_TIMELINE_SUCCESS",
@@ -199,7 +199,7 @@ export const addProject = (formData) => async (dispatch) => {
       type: "ADD_PROJECT_REQUEST",
     });
 
-    const { data } = await axios.post("/api/v1/admin/project/add", formData, {
+    const { data } = await api.post("/admin/project/add", formData, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -223,7 +223,7 @@ export const deleteProject = (id) => async(dispatch) => {
             type: "DELETE_PROJECT_REQUEST",
         });
 
-        const {data} =await axios.delete(`/api/v1/admin/project/${id}`); 
+        const {data} =await api.delete(`/admin/project/${id}`); 
         
         dispatch({
             type: "DELETE_PROJECT_SUCCESS",
@@ -244,7 +244,7 @@ export const addAchievements = (formData) => async (dispatch) => {
         type: "ADD_ACHIEVEMENT_REQUEST",
       });
   
-      const { data } = await axios.post("/api/v1/admin/achievement/add", formData, {
+      const { data } = await api.post("/admin/achievement/add", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -268,7 +268,7 @@ export const addAchievements = (formData) => async (dispatch) => {
             type: "DELETE_ACHIEVEMENT_REQUEST",
         });
 
-        const {data} =await axios.delete(`/api/v1/admin/achievement/${id}`); 
+        const {data} =await api.delete(`/admin/achievement/${id}`); 
         
         dispatch({
             type: "DELETE_ACHIEVEMENT_SUCCESS",
@@ -290,7 +290,7 @@ export const addPassionate = (formData) => async (dispatch) => {
         type: "ADD_PASSIONATE_REQUEST",
       });
   
-      const { data } = await axios.post("/api/v1/admin/passionate/add", formData, {
+      const { data } = await api.post("/admin/passionate/add", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -314,7 +314,7 @@ export const addPassionate = (formData) => async (dispatch) => {
             type: "DELETE_PASSIONATE_REQUEST",
         });
 
-        const {data} =await axios.delete(`/api/v1/admin/passionate/${id}`); 
+        const {data} =await api.delete(`/admin/passionate/${id}`); 
         
         dispatch({
             type: "DELETE_PASSIONATE_SUCCESS",
