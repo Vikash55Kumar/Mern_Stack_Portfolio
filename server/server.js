@@ -12,7 +12,7 @@ dotenv.config();
 connectDatabase();
 
 app.use(cors({
-    origin: process.env.CORES_ORIGIN || "http://localhost:5173",
+    origin: ['http://localhost:5173', 'https://mernportfoliovikash.netlify.app', process.env.CORES_ORIGIN],
     methods: 'DELETE, POST, GET, PUT',
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'], 
     credentials: true,
