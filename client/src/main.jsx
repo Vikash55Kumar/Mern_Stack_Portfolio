@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import {Provider} from "react-redux"
 import store from './Store.js'
-import {Provider as Alertprovider, positions, transitions} from "react-alert"
-import AlertTemplete from "react-alert-template-basic"
+// import {Provider as Alertprovider, positions, transitions} from "react-alert"
+// import AlertTemplete from "react-alert-template-basic"
 
 const position ={
   position:positions.BOTTOM_CENTER,
@@ -15,9 +15,9 @@ const position ={
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
-      <Alertprovider template={AlertTemplete} {...position}> 
+      {/* <Alertprovider template={AlertTemplete} {...position}>  */}
         <App />
-      </Alertprovider>
+      {/* </Alertprovider> */}
     </Provider>
   </React.StrictMode>,
 )
