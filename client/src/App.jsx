@@ -17,6 +17,7 @@ import Achievement from './component/AdminPanel/Achievement.jsx';
 import Passionate from './component/passionate/Passionate.jsx';
 import Passionates from './component/AdminPanel/Passionate.jsx';
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
@@ -26,7 +27,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getUser());
-    dispatch(loadUser);
+    dispatch(loadUser());
   }, [dispatch]);
 
   return (
