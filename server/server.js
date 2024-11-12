@@ -2,14 +2,14 @@
 import {app} from "./app.js";
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import {connectDatabase} from "./config/database.js";
 import cloudinary from 'cloudinary';
 import fs from 'fs';
+import path from "path";
 
 dotenv.config();
 connectDatabase();
-
-import path from "path";
 
 app.use(cors({
     origin: process.env.CORES_ORIGIN || "http://localhost:5173",
