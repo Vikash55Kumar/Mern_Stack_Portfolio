@@ -10,16 +10,37 @@ dotenv.config();
 connectDatabase();
 
 import path from "path";
-import { fileURLToPath } from "url";
+// import { fileURLToPath } from "url";
 
 // rsolving dirname for ES module
-const __filename=fileURLToPath(import.meta.url)
-const __dirname=path.dirname(__filename)
+// const __filename=fileURLToPath(import.meta.url)
+// const __dirname=path.dirname(__filename)
 
-app.use(express.static(path.join(__dirname, '/client/dist')))
+// app.use(express.static(path.join(__dirname, '/client/dist')))
 
-// render client for any path
-app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'client/dist/index.html')))
+// // render client for any path
+// app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'client/dist/index.html')))
+
+
+
+// build
+const __dirname = path.resolve();
+
+const buildPath = path.join(__dirname, '../client/dist');
+
+app.use(express.static(buildPath));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(buildPath, 'index.html'));
+});
+
+
+
+
+
+
+
+
 
 // import cloudinary from "cloudinary"
 cloudinary.v2.config({
