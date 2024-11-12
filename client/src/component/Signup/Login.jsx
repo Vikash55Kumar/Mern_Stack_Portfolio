@@ -3,14 +3,13 @@ import './Login.css'
 import { Button, Typography } from '@mui/material'
 import { login } from '../../action/user';
 import {useDispatch, useSelector} from "react-redux";
-import {useAlert} from "react-alert"
+import { toast } from 'react-toastify';
 
 function Login() {
     const [email, setEmail]=useState("");
     const [password, setPassword]=useState("");
 
     const dispatch = useDispatch();
-    const alert=useAlert();
     const {loading, message, error} =useSelector((state) => state.login);
     const submitHandler=(e) => {
         e.preventDefault();
@@ -19,14 +18,14 @@ function Login() {
 
     useEffect(()=> {
         if(error){
-            alert.error(error);
+            toast.error(error);
             dispatch({type:"CLEAR_ERROR"})
         }
         if(message){
-            alert.success(message);
+            toast.success("Admin Login Successfully");
             dispatch({type:"CLEAR_MESSAGE"});
         }
-    }, [alert, error, message, dispatch]);
+    }, [error, message, dispatch]);
 
   return (
     <div className='login'>
