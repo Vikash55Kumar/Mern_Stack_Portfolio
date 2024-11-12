@@ -11,10 +11,5 @@ export default defineConfig({
   // build: {
   //   outDir: 'dist'
   // },
-  build: {
-    rollupOptions: {
-      external: ['react-alert']
-    }
-  },
   plugins: [react()],
 })
