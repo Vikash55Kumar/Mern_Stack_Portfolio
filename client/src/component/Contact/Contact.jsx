@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import "./Contact.css"
 import vikash from '../../assets/contact.jpg'
 import emailjs from '@emailjs/browser';
+import { toast } from 'react-toastify';
 
 
 export default function Contact() {
@@ -22,10 +23,11 @@ export default function Contact() {
             (result) => {
               console.log('SUCCESS!', result.text);
               e.target.reset();
-              alert("Form submit successfully");
+              toast.success("Form submit successfully");
             },
             (error) => {
               console.log('FAILED...', error.text);
+              toast.error("Form not submit successfully")
             },
           );
       };

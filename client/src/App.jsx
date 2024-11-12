@@ -16,6 +16,7 @@ import Intro from './component/AdminPanel/Intro.jsx';
 import Achievement from './component/AdminPanel/Achievement.jsx';
 import Passionate from './component/passionate/Passionate.jsx';
 import Passionates from './component/AdminPanel/Passionate.jsx';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
 
@@ -29,7 +30,19 @@ function App() {
   }, [dispatch]);
 
   return (
-    <Router>
+    <>
+      <ToastContainer
+        position="top-center"  // This will show the toast in the center of the screen
+        autoClose={3000}  // Toast will disappear after 4 seconds
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+      <Router>
       {loading ? <div>Loading...</div>: (
         <> 
         <Navbar/>
@@ -49,6 +62,7 @@ function App() {
         </>
       ) };
   </Router>
+    </>
   )
 }
 

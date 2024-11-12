@@ -8,3 +8,6 @@ const api = axios.create({
 });
 
 export default api;
+
+// "react-alert": "^7.0.3",
+// "react-alert-template-basic": "^1.0.2",
