@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser, UpdateIntro } from "../../action/user";
 import { MdKeyboardBackspace } from "react-icons/md";
 import { Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import './Project.css';
+import { toast } from "react-toastify";
 
 const Intro =() => {
   const { message, error, loading } = useSelector((state) => state.update);
   const { message: loginMessage } = useSelector((state) => state.login);
 
   const dispatch = useDispatch();
-  const alert = useAlert();
 
   const [name, setName] = useState("");
   const [url, setUrl] = useState("");
@@ -41,18 +40,18 @@ const submitHandler = async (e) => {
 
   useEffect(()=> {
     if(error){
-        alert.error(error);
+        toast.error(error);
         dispatch({type:"CLEAR_ERROR"})
     }
     if(message){
-        alert.success(message);
+        toast.success(message);
         dispatch({type:"CLEAR_MESSAGE"});
     }
     if(loginMessage) {
-        alert.success(loginMessage);
+        toast.success(loginMessage);
         dispatch({type:"CLEAR_MESSAGE"});
     }
-  }, [alert, error, message, dispatch, loginMessage]);
+  }, [error, message, dispatch, loginMessage]);
 
   return (
     <div className="adminpanel">

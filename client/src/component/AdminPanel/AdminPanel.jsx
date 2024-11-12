@@ -6,13 +6,12 @@ import {MdTimeline} from "react-icons/md"
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout, updateUser } from "../../action/user";
-import { useAlert } from "react-alert";
 import { useEffect } from "react";
+import { toast } from "react-toastify";
 
 const  AdminPanel = () => {
 
     const dispatch = useDispatch();
-    const alert=useAlert();
     const {message:loginMessage} = useSelector(state=>state.login);
     const {message, error, loading} = useSelector(state=>state.update);
 
@@ -83,18 +82,18 @@ const  AdminPanel = () => {
 
     useEffect(()=> {
         if(error){
-            alert.error(error);
+            toast.error(error);
             dispatch({type:"CLEAR_ERROR"})
         }
         if(message){
-            alert.success(message);
+            toast.success(message);
             dispatch({type:"CLEAR_MESSAGE"});
         }
         if(loginMessage){
-            alert.success(loginMessage);
+            toast.success(loginMessage);
             dispatch({type:"CLEAR_MESSAGE"});
         }
-    }, [alert, error, message, dispatch, loginMessage]);
+    }, [error, message, dispatch, loginMessage]);
 
     return <div className="adminpanel">
        <div className="adminContainer">
