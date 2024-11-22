@@ -58,16 +58,6 @@ export { uploadOneCloudinary };
 //Api router
 app.use("/api/v1", userRouter);
 
-// const __dirname = path.resolve();
-
-// const buildPath = path.join(__dirname, '../client/dist');
-
-// app.use(express.static(buildPath)); 
-
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(buildPath, 'index.html'));
-// });
-
 // Serve frontend static files
 const __dirname = path.resolve();
 const buildPath = path.join(__dirname, "../client/dist");

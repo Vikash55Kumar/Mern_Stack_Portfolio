@@ -25,7 +25,7 @@ export const userRouter = express.Router();
 userRouter.route("/login").post(login);
 userRouter.route("/logout").get(logout);
 userRouter.route("/user").get(getUser);
-userRouter.route("/me").get(isAuthenticate, myProfile);
+userRouter.route("/me").get( myProfile);
 userRouter.route("/admin/userUpdate").put(isAuthenticate, userUpdate);
 userRouter.route("/admin/intro").post(upload.single('image'), isAuthenticate, intro);
 userRouter.route("/admin/timeline/add").post(upload.single('image'), isAuthenticate, addTimeline);
