@@ -6,6 +6,7 @@ export const getUser = () => async(dispatch) => {
         });
 
         const {data} =await api.get("/user");
+        // console.log("data ", data)
         dispatch({
             type: "GET_USER_SUCCESS",
             payload:data.user,
@@ -48,8 +49,6 @@ export const login = (email, password) => async(dispatch) => {
     }
 }
 
-
-
 export const logout = () => async(dispatch) => {
     try {
         dispatch({
@@ -76,7 +75,9 @@ export const loadUser = () => async (dispatch) => {
         type: "LOAD_USER_REQUEST",
       });
   
-      const { data } = await api.get("/me");
+      const { data } = await api.get("/user");
+
+    //   console.log("daaaaaaaaaa", data)
   
       dispatch({
         type: "LOAD_USER_SUCCESS",

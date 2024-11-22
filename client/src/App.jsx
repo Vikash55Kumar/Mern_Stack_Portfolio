@@ -25,6 +25,8 @@ function App() {
   const {isAuthenticate} = useSelector((state) => state.login);
   const {loading, user} = useSelector((state) => state.user);
 
+  // console.log(user)
+
   useEffect(() => {
     dispatch(getUser());
     dispatch(loadUser());
@@ -44,25 +46,33 @@ function App() {
         pauseOnHover
       />
       <Router>
-      {loading ? <div>Loading...</div>: (
-        <> 
-        <Navbar/>
-        <Routes>
-          <Route path='/' element={<Home timelines={user.timeline} skills={user.skills} project={user.projects} about={user.about} intro={user.intro} achievement={user.achievements} passionate={user.passionate}/>} />
-          <Route path='/Project' element={<Project projects={user.projects}/>} />
-          <Route path='/About' element={<About about={user.about}/>} />
-          <Route path='/Passionate' element={<Passionate/>} />
-          <Route path='/Contact' element={<Contact/>} />
-          <Route path='/account' element={isAuthenticate ? <AdminPanel/> : <Login/>} />
-          <Route path='/admin/achievements' element={isAuthenticate ? <Achievement/> : <Login/>} />
-          <Route path='/admin/intro' element={isAuthenticate ? <Intro/> : <Login/>} />
-          <Route path='/admin/passionate' element={isAuthenticate ? <Passionates/> : <Login/>} />
-          <Route path='/admin/timeline' element={isAuthenticate ? <Timeline/> : <Login/>} />
-          <Route path='/admin/project' element={isAuthenticate ? <Projects/> : <Login/>} />
-        </Routes>
-        </>
-      ) };
-  </Router>
+        {loading ? <div>Loading...</div>: (
+          <> 
+          <Navbar/>
+          <Routes>
+            <Route path='/' element={<Home 
+            timelines={user.timeline}
+            skills={user.skills}
+            project={user.projects}
+            about={user.about}
+            intro={user.intro}
+            achievement={user.achievements}
+            passionate={user.passionate}
+            /> } />
+            <Route path='/Project' element={<Project projects={user.projects}/>} />
+            <Route path='/About' element={<About about={user.about}/>} />
+            <Route path='/Passionate' element={<Passionate/>} />
+            <Route path='/Contact' element={<Contact/>} />
+            <Route path='/account' element={isAuthenticate ? <AdminPanel/> : <Login/>} />
+            <Route path='/admin/achievements' element={isAuthenticate ? <Achievement/> : <Login/>} />
+            <Route path='/admin/intro' element={isAuthenticate ? <Intro/> : <Login/>} />
+            <Route path='/admin/passionate' element={isAuthenticate ? <Passionates/> : <Login/>} />
+            <Route path='/admin/timeline' element={isAuthenticate ? <Timeline/> : <Login/>} />
+            <Route path='/admin/project' element={isAuthenticate ? <Projects/> : <Login/>} />
+          </Routes>
+          </>
+        ) }
+      </Router>
     </>
   )
 }
