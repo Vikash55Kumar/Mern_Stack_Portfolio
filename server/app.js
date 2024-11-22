@@ -1,10 +1,85 @@
+// import {app} from "./servers.js";
 import express from "express";
+import dotenv from "dotenv";
+import cors from "cors";
+import {connectDatabase} from "./config/database.js";
+import cloudinary from 'cloudinary';
+import fs from 'fs';
+import path from "path";
+import {userRouter} from "./routes/User.js";
+
+// import express from "express"
 export const app = express();
 import cookieParser from "cookie-parser";
 
 app.use(express.json({limit:"50mb"}));
 app.use(express.urlencoded({extended:true, limit:"50mb"}));
 app.use(cookieParser());
-import {userRouter} from "./routes/User.js";
 
+dotenv.config();
+connectDatabase();
+
+app.use(cors({
+    origin: ['http://localhost:5173', 'https://mernportfoliovikash.netlify.app', process.env.CORES_ORIGIN],
+    methods: 'DELETE, POST, GET, PUT',
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'], 
+    credentials: true,
+}))
+
+// import cloudinary from "cloudinary"
+cloudinary.v2.config({
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.CLOUD_KEY,
+    api_secret: process.env.CLOUD_SECRET,
+});
+
+const uploadOneCloudinary = async (localFilePath) => {
+    try {
+        if (!localFilePath) {
+            console.log("File not found");
+            return; // Stop execution if file path is not provided
+        }
+        const response = await cloudinary.uploader.upload(localFilePath, {
+            resource_type: "auto"
+        });
+        // file upload successful
+        console.log("File is uploaded on Cloudinary", response.url);
+        return response;
+    } catch (error) {
+        fs.unlink(localFilePath, (err) => {
+            if (err) console.error("Error deleting file:", err);
+        }); // remove temporary file
+        console.error("Error uploading file:", error);
+    }
+}
+
+export { uploadOneCloudinary };
+
+//Api router
 app.use("/api/v1", userRouter);
+
+// const __dirname = path.resolve();
+
+// const buildPath = path.join(__dirname, '../client/dist');
+
+// app.use(express.static(buildPath)); 
+
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(buildPath, 'index.html'));
+// });
+
+// Serve frontend static files
+const __dirname = path.resolve();
+const buildPath = path.join(__dirname, "../client/dist");
+app.use(express.static(buildPath));
+
+// Fallback to index.html for frontend routes
+app.get("*", (req, res) => {
+  res.sendFile(path.join(buildPath, "index.html"));
+});
+
+const PORT=process.env.PORT || 4000
+app.listen(PORT, () => {
+    console.log(`server is running on port: ${process.env.PORT}`);
+});
+
