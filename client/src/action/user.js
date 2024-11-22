@@ -75,7 +75,7 @@ export const loadUser = () => async (dispatch) => {
         type: "LOAD_USER_REQUEST",
       });
   
-      const { data } = await api.get("/user");
+      const { data } = await api.get("/me");
 
     //   console.log("daaaaaaaaaa", data)
   
