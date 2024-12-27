@@ -1,34 +1,59 @@
-import {User} from "../model/User.js";
+// import {User} from "../model/User.js";
+// import jwt from "jsonwebtoken";
+
+// export const isAuthenticate = async(req, res, next) => {
+//     try {
+//         const {token} = req.cookies;
+//         if(!token) {
+//             return req.status(400).json ({
+//                 success: false,
+//                 message: "Login to Access this resource",
+//             });
+//         }
+//         // process.env.JWT_SECRET
+//         const decoded=jwt.verify(token, process.env.JWT_SECRET);
+
+//         const user = await User.findById(decoded._id);
+//         req.user=user;
+//         next();
+
+//     }  catch (error) {
+//         return req.status(400).json ({
+//             success: false,
+//             message: error.message,
+//         });
+//     }
+// }
+
+
+
+
+
+
+import { User } from "../model/User.js";
 import jwt from "jsonwebtoken";
 
-export const isAuthenticate = async(req, res, next) => {
+export const isAuthenticate = async (req, res, next) => {
     try {
-        const {token} = req.cookies;
-        if(!token) {
-            return req.status(400).json ({
+        const { token } = req.cookies;
+        console.log(token)
+        if (!token) {
+            return res.status(400).json({
                 success: false,
                 message: "Login to Access this resource",
             });
         }
-        // process.env.JWT_SECRET
-        const decoded=jwt.verify(token, process.env.JWT_SECRET);
+
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
         const user = await User.findById(decoded._id);
-        req.user=user;
+        req.user = user;
         next();
 
-    }  catch (error) {
-        return req.status(400).json ({
+    } catch (error) {
+        return res.status(400).json({
             success: false,
             message: error.message,
         });
     }
-}
-
-
-
-
-
-
-
-
+};

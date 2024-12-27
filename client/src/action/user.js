@@ -30,7 +30,7 @@ export const login = (email, password) => async(dispatch) => {
             email,
             password,
         }, 
-        console.log(email, password),
+        // console.log(email, password),
         {
             headers: {
                 "Content-Type" :"application/json"
