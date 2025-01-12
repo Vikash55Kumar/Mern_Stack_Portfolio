@@ -58,7 +58,8 @@ export const logout = async(req, res) => {
 export const getUser = async(req, res) => {
     
     try {
-        const user = await User.findOne().select("-password -email");   //not require email or password during website launch
+        const user = await User.findOne({}, "-password -email").lean().exec();  
+        // const user = await User.findOne().select("-password -email");   //not require email or password during website launch
         // console.log("hello user", user)
         res.status(200).json({
             success:true,

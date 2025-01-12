@@ -12,12 +12,12 @@ import {userRouter} from "./routes/User.js";
 export const app = express();
 import cookieParser from "cookie-parser";
 
-app.use(express.json({limit:"50mb"}));
-app.use(express.urlencoded({extended:true, limit:"50mb"}));
+app.use(express.json({limit:"10mb"}));
+app.use(express.urlencoded({extended:true, limit:"10mb"}));
 app.use(cookieParser());
 
 dotenv.config();
-connectDatabase();
+// connectDatabase();
 
 app.use(cors({
     origin: ['https://mernportfoliovikash.netlify.app', process.env.CORES_ORIGIN],
@@ -55,21 +55,38 @@ const uploadOneCloudinary = async (localFilePath) => {
 
 export { uploadOneCloudinary };
 
+const PORT=process.env.PORT || 4000
+const startServer = async () => {
+    try {
+      await connectDatabase();
+      app.listen(PORT, () => {
+        console.log(`Server is running on port: ${PORT}`);
+      });
+    } catch (err) {
+      console.log("Database connection failed", err);
+    }
+  };
+  
+  startServer();
+
 //Api router
 app.use("/api/v1", userRouter);
 
 // Serve frontend static files
 const __dirname = path.resolve();
 const buildPath = path.join(__dirname, "../client/dist");
-app.use(express.static(buildPath));
+app.use(express.static(buildPath, {
+    maxAge: '1d',
+    etag: false,
+}));
 
 // Fallback to index.html for frontend routes
 app.get("*", (req, res) => {
   res.sendFile(path.join(buildPath, "index.html"));
 });
 
-const PORT=process.env.PORT || 4000
-app.listen(PORT, () => {
-    console.log(`server is running on port: ${process.env.PORT}`);
-});
+// const PORT=process.env.PORT || 4000
+// app.listen(PORT, () => {
+//     console.log(`server is running on port: ${process.env.PORT}`);
+// });
 
