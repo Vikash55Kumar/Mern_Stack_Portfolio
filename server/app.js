@@ -17,7 +17,6 @@ app.use(express.urlencoded({extended:true, limit:"10mb"}));
 app.use(cookieParser());
 
 dotenv.config();
-// connectDatabase();
 
 app.use(cors({
     origin: ['https://mernportfoliovikash.netlify.app', process.env.CORES_ORIGIN],
@@ -53,8 +52,6 @@ const uploadOneCloudinary = async (localFilePath) => {
     }
 }
 
-export { uploadOneCloudinary };
-
 const PORT=process.env.PORT || 4000
 const startServer = async () => {
     try {
@@ -85,8 +82,4 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(buildPath, "index.html"));
 });
 
-// const PORT=process.env.PORT || 4000
-// app.listen(PORT, () => {
-//     console.log(`server is running on port: ${process.env.PORT}`);
-// });
-
+export { uploadOneCloudinary };
