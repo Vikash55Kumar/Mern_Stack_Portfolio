@@ -1,0 +1,159 @@
+.adminpanel {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(116, 239, 229);
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.adminContainer {
+    width: 100%;
+    max-height: 1200px;
+    min-height: 100vh;
+    background-color: white;
+    
+}
+
+.adminName {
+    display:flex;  
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.adminContainer > h4 {
+    margin: 2vmax;
+    letter-spacing: 15px;
+    display: flex;
+    animation: contactFormsInputs 1s ease-in-out forwards;
+}
+
+.adminContainer >h4 >p {
+    transition: all 0.5s;
+}
+
+.adminContainer > h4 > p:hover {
+    transform:translateY(-10px);
+}
+.adminContainer> form {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4vmax;
+    padding-top: 0;
+}
+
+.adminPanelInput {
+    width: 50%;
+    padding: 1vmax 2vmax;
+    border: 1px solid wheat;
+    font: 100 1rem "Roboto", sans-serif;
+    outline: none;
+    margin: 2vmax;
+    box-sizing: border-box;
+}
+
+.adminSkill >fieldset >legend {
+    margin: 2vmax;
+    font: 400 2rem "Roboto";
+}
+
+.adminSkill {
+    width: 75%;
+}
+
+.adminSkill >fieldset {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid black;
+}
+
+.adminSkill > fieldset > div {
+    display:flex;
+    align-items: center;
+    margin: 1vmax;
+}
+
+.adminSkill > fieldset > div > p {
+    font: 400 1.5rem "Roboto", sans-serif;
+    margin-right: 2vmax;
+    color: brown;
+}
+
+.adminFileUpload::-webkit-file-upload-button {
+    width: 100%;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: skyblue;
+    padding: 1vmax;
+    color: white;
+}
+
+.adminAbout > fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid black;
+    margin: 2vmax;
+}
+.adminAbout {
+    width: 80%;
+}
+.adminAbout >fieldset >legend {
+    margin: 2vmax;
+    font: 400 2rem "Roboto";
+}
+
+.adminAbout >fieldset > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1rem;
+}
+
+.adminAbout >fieldset > div > p {
+    font: 400 1.5rem "Roboto", sans-serif;
+    margin-right: 2vmax;
+    color: brown;
+}
+
+.adminContainer > form > a {
+    background-color: rgb(213, 213, 223);
+    padding: 2vmax; 
+    font: 400 2rem "Roboto", sans-serif;
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 220px;
+    margin: 2vmax;
+    transition: all 0.5s;
+}
+
+.adminContainer >form > a:hover {
+    box-shadow: 0 0 10px black;
+    transform: scale(1.1);
+} 
+.adminContainer > form > button {
+    width: 100%;
+    padding: 1vmax;
+    margin: 2vmax;
+    background-color: black;
+}
+.adminContainer > form > button:hover {
+    background-color: black;
+}
+
+.but {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2rem;
+}

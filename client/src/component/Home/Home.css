@@ -1,0 +1,118 @@
+.homeCanvas {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    background-color: rgb(224, 100, 100);
+}
+
+.homeContainer {
+    background-color: white;
+    /* background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
+    /* padding: 4vmax; */
+    font-weight: 600;
+    font-size: 3rem;
+    padding-top: 3rem;
+    border-radius: 0 0 200px 200px;
+    border-bottom: 0 0 200px solid white;
+    position: relative;
+    z-index: 1;
+    padding:4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: center;
+}
+
+.homeContainer > h3 {
+    text-align: center;
+    color: black;
+    padding: 4vmax;
+}
+
+.homeSkills {
+    transform: translateY(-200px);
+    /* background-color: hsl(219, 48%, 8%); */
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    height: 1200px;
+    position: relative;
+    margin-bottom: -200px;
+    padding: 200px;
+    box-sizing: border-box;
+    perspective: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow-x: hidden;
+  }
+  
+  .skill {
+    font-weight: 600;
+    font-size: 3rem;
+    padding-top: 3rem;
+  }
+  
+  .homeCubeSkills {
+    width: 200px;
+    height: 200px;
+    animation: cubeRotation 15s linear infinite alternate;
+    transform-style: preserve-3d;
+  }
+  
+  .homeCubeSkillsFaces {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    /* opacity: 0.7; */
+  }
+  
+  .homeCubeSkillsFaces > img {
+    width: inherit;
+    height: inherit;
+  }
+  
+  .homeCubeSkillsFace1 {
+    transform: translate3d(0, 0, 100px);
+  }
+  .homeCubeSkillsFace2 {
+    transform: rotateY(180deg) translate3d(0, 0, 120px);
+  }
+  .homeCubeSkillsFace3 {
+    transform: rotateY(-90deg) translate3d(0, 0, 120px);
+  }
+  .homeCubeSkillsFace4 {
+    transform: rotateY(90deg) translate3d(0, 0, 120px);
+  }
+  .homeCubeSkillsFace5 {
+    transform: rotateX(90deg) translate3d(0, 0, 120px);
+  }
+  .homeCubeSkillsFace6 {
+    transform: rotateX(-90deg) translate3d(0, 0, 120px);
+  }
+
+  .cubeShadow {
+    width: 300px;
+    height: 40px;
+    background-color: grey;
+    border-radius: 50%;
+    margin-top: 3rem;
+    animation: cubeShadow 1s ease-in-out infinite alternate;
+    filter: blur(3px);
+}
+
+@keyframes cubeRotation {
+    to {
+        transform : rotateY(360deg) rotateX(400deg) rotateZ(720deg);
+    }
+}
+
+@keyframes cubeShadow {
+    to {
+        transform :scale(1.5) translateY(-10px) ;
+    }
+}
+

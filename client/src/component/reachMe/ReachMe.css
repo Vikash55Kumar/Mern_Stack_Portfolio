@@ -1,0 +1,111 @@
+.area {
+    background-color: rgb(34, 112, 215);
+}   
+.reachMe {
+    
+    min-height: cal(100vh-4rem);
+    width: 100vw;
+    padding: 2rem 0;
+    /* height: 100vh; */
+    max-width: 79rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    text-align: center;
+    color: white;
+    justify-content: space-evenly;
+}
+.connectLink {
+    display: flex;
+    flex-direction: column;
+}
+.title2 {
+    font-size: 2rem;
+    font-weight: 550;
+    margin: 2rem 0;
+    padding: 0 ;
+    text-align: left;
+}
+.description2 {
+    font-size: 16px;
+    margin: 1rem 0;
+    text-align: left;
+    padding-right: 1rem;
+}
+.links {
+    /* margin:  auto; */
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: left;
+}
+.link {
+    object-fit: cover;
+    margin-right:1rem;
+}
+.image2 {
+    width: 3rem;
+}
+.contactDetails {
+    display: flex;
+    flex-direction: column;
+    /* margin: 0 2rem ; */
+}
+.title3 {
+    font-size: 2rem;
+    font-weight: 550;
+    margin: 2rem 0;  
+    text-align: left; 
+}
+.block {
+    font-size: 16px;                                                              
+    text-align: left;
+    
+}
+.addressLink {   
+    list-style-type: none;
+    padding: .5rem 0; 
+}
+.text {
+    color: white;
+}
+.creator {
+    width: 100vw;
+    height: 30vh;
+    max-width: 79rem;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 400;
+    padding-top: 5rem;
+    color: white;
+}
+
+@media screen and (max-width:977px) {
+    .reachMe {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .connectLink {
+        align-items: left;
+        margin-left: 2rem;
+    }
+    .contactDetails {
+        margin-top: 2rem;
+        align-items: left;
+        margin-right: 2rem;
+    }
+   
+}
+@media screen and (max-width:693px) {
+    .contactDetails {
+        margin-left: 2rem;
+    }
+}
+
+@media screen and (max-width:693px) {
+    
+}

@@ -1,0 +1,149 @@
+#contact {
+    min-height: calc(100vh-4rem);
+    width: 100vw;
+    max-width: 80vw;
+    margin: 0 auto;
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.clientContact {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.title1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    padding-top: 3rem;
+    margin-bottom: 1.5rem;
+
+    
+}
+
+.description1 {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.form {
+    background-color: rgb(227, 235, 236);
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem ;
+    justify-content: space-evenly;
+}
+
+.clintImgs {
+    width: 31rem;
+    transform: translateX(-100vw);
+    animation: contactImage 1s ease-in-out forwards 0.5s;
+}
+
+.clintImg {
+    height: 550px;
+    width: 450px;
+}
+
+.ClientForm {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 2rem;
+    margin: 1rem auto;
+}
+
+.forms {
+    height: 7rem;
+    width: 35vw;
+    max-width: 100%;
+    transform: translateX(100vw);
+    animation: contactFormInputs 1s ease-in-out forwards 0.5s;
+}
+
+.space {
+  padding-top: 2.5rem;
+}
+.submit-btn {
+    margin-left: 0;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    height: 3.2rem;
+    max-width:  19rem;
+    transform: translateX(-100vw);
+    animation: contactFormInputs 1s ease-in-out forwards 0.5s;
+}
+
+@media screen and (max-width:1011px) {
+    .clintImgs {
+        display: none;
+    }
+    .forms {
+
+        width: 80vw;
+        max-width: 80%;
+    }
+    .ClientForm {
+        align-items: center;
+    }
+    .submit-btn {
+        width: 20rem;
+    }
+}
+@media screen and (max-width: 600px) {
+    .recaptcha {
+        transform: scale(0.9);
+    }
+    .submit-btn {
+        width: 17rem;
+    }
+}
+@media screen and (max-width: 435px) {
+    .recaptcha {
+        transform: scale(0.8);
+    }
+    .submit-btn {
+        width: 15rem;
+    }
+}
+
+
+@keyframes contactTransition {
+    from {
+      transform: translateX(-100%) translateY(-50%);
+    }
+    to {
+      transform: translateX(20%) translateY(-50%);
+    }
+  }
+
+  @keyframes contactFormTransition {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  @keyframes contactFormBtn {
+    to {
+      transform: translateY(0);
+    }
+  }
+  @keyframes contactImage {
+    to {
+      transform: translateX(0);
+    }
+  }
+  @keyframes contactFormInputs {
+    to {
+      transform: translateX(0);
+    }
+  }
