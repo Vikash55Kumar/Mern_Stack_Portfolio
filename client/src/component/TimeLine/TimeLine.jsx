@@ -3,6 +3,7 @@ import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timel
 import 'react-vertical-timeline-component/style.min.css';
 import './Timeline.css'
 
+
 const TimeLine=({timelines=[]}) => {
   return (
     <div>
@@ -13,7 +14,7 @@ const TimeLine=({timelines=[]}) => {
                 date={new Date(item.date).toLocaleDateString()}
 
                 // date={item.date.toString().split("T")[0]}
-                icon={<img src={item.image?.url} style={{ width: '50px', height: '50px', borderRadius: '50%', objectFit: 'cover' }} />}
+                icon={<img src={item.image?.url} className="profile-icon"/>}
 
                 // icon={<img src={item.image?.url} style={{ width: '100%', height: '100%', borderRadius: '50%' }} />}
                 contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
