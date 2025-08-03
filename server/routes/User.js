@@ -29,7 +29,7 @@ userRouter.route("/me").get(isAuthenticate, myProfile);
 userRouter.route("/admin/userUpdate").put(isAuthenticate, userUpdate);
 userRouter.route("/admin/intro").post(upload.single('image'), isAuthenticate, intro);
 userRouter.route("/admin/timeline/add").post(upload.single('image'), isAuthenticate, addTimeline);
-
+userRouter.route("/active").get((req, res) => {res.send("active")});
 // Apply upload middleware before isAuthenticate middleware
 
 userRouter.route("/admin/project/add").post(upload.single('image'), isAuthenticate, addProject);
