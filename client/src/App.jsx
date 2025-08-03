@@ -70,6 +70,7 @@ function App() {
             <Route path='/admin/passionate' element={isAuthenticate ? <Passionates/> : <Login/>} />
             <Route path='/admin/timeline' element={isAuthenticate ? <Timeline/> : <Login/>} />
             <Route path='/admin/project' element={isAuthenticate ? <Projects/> : <Login/>} />
+            <Route path="/portfolio-active" element={<div>portfolio active</div>} />
           </Routes>
           </>
         ) }
@@ -79,3 +80,4 @@ function App() {
 }
 
 export default App
+
